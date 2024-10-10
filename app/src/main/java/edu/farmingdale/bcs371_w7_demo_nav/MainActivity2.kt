@@ -60,7 +60,7 @@ fun BasicOperations(name: String, modifier: Modifier = Modifier) {
             newInt.setData(Uri.parse("geo:0,0?q=Farmingdale State College, NY"))
             context.startActivity(newInt)
         },
-            modifier= Modifier.padding(start = 40.dp, end = 40.dp)) {
+            modifier= Modifier.padding(start = 40.dp, end = 40.dp), enabled = checkBox) {
             Icon( imageVector = Icons.Default.LocationOn, contentDescription = "Location")
             Text("Show me  Farmingdale", modifier = Modifier.padding(start = 10.dp))
         }
@@ -71,7 +71,7 @@ fun BasicOperations(name: String, modifier: Modifier = Modifier) {
             newInt.setData(Uri.parse("tel:6319264782"))
             context.startActivity(newInt)
         },
-            modifier= Modifier.padding(start = 40.dp, end = 40.dp)) {
+            modifier= Modifier.padding(start = 40.dp, end = 40.dp), enabled = checkBox) {
             Icon( imageVector = Icons.Default.Phone, contentDescription = "Phone")
             Text("Call Me", modifier = Modifier.padding(start = 10.dp))
         }
@@ -83,7 +83,7 @@ fun BasicOperations(name: String, modifier: Modifier = Modifier) {
 
             context.startActivity(Intent(context, MainActivity::class.java))
         },
-            modifier= Modifier.padding(start = 40.dp, end = 40.dp)) {
+            modifier= Modifier.padding(start = 40.dp, end = 40.dp), enabled = checkBox,) {
             Icon( imageVector = Icons.Default.Info, contentDescription = "Phone")
             Text("Go To activity 2", modifier = Modifier.padding(start = 10.dp))
         }
@@ -99,7 +99,7 @@ fun BasicOperations(name: String, modifier: Modifier = Modifier) {
         Switch(
             checked = checkBox,
             onCheckedChange = {  checkBox = it },
-            modifier = Modifier.padding(10.dp),
+            modifier = Modifier.padding(10.dp)
         )
         // ToDo 6: when the switch is off, disable the buttons
     }

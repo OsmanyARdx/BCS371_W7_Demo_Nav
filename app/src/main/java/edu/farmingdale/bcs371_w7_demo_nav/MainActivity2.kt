@@ -52,7 +52,7 @@ class MainActivity2 : ComponentActivity() {
 @Composable
 fun BasicOperations(name: String, modifier: Modifier = Modifier) {
     val  context = LocalContext.current
-    var checkBox = false
+    var checkBox by remember { mutableStateOf(true) }
     Column {
         Spacer(modifier = Modifier.padding(50.dp))
         Button( onClick = {
@@ -68,7 +68,7 @@ fun BasicOperations(name: String, modifier: Modifier = Modifier) {
 
         Button( onClick = {
             val newInt = Intent(Intent.ACTION_VIEW)
-            newInt.setData(Uri.parse("tel:6319264782"))
+            newInt.setData(Uri.parse("tel:1234567890"))
             context.startActivity(newInt)
         },
             modifier= Modifier.padding(start = 40.dp, end = 40.dp), enabled = checkBox) {

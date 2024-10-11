@@ -45,14 +45,11 @@ import kotlinx.coroutines.delay
 fun Navigation() {
     val navController= rememberNavController()
     NavHost(navController = navController, startDestination = "splash_screen"  ){
-        composable("splash_screen"
-        ) {
+        composable("splash_screen") {
             SpalshScreen(navController)
-
         }
 
-        composable("first_screen"
-        ) {
+        composable("first_screen") {
             FirstScreen(navController)
 
         }
@@ -63,11 +60,18 @@ fun Navigation() {
         }
 
         // ToDo 7: Add more nav screens here for the pizza party and gpa calculator
+        composable("pizza_screen"){
+            pizzaPartyScreen(navController)
+        }
 
+        composable("gpa_screen"){
+            gpaappFun(navController)
+        }
 
     }
 
 }
+
 
 @Composable
 fun FirstScreen(navController: NavController) {
@@ -108,6 +112,11 @@ fun SecondScreen(navController: NavController) {
         Checkbox(checked = true, onCheckedChange = {  }, modifier = Modifier.padding(10.dp))
 
     }
+
+}
+
+@Composable
+fun pizzaPartyScreen(navController: NavController) {
 
 }
 

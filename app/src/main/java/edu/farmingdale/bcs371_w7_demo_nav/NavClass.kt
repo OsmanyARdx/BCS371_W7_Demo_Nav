@@ -61,7 +61,7 @@ fun Navigation() {
 
         // ToDo 7: Add more nav screens here for the pizza party and gpa calculator
         composable("pizza_screen"){
-            pizzaPartyScreen(navController)
+            PizzaPartyScreen(navController)
         }
 
         composable("gpa_screen"){
@@ -89,9 +89,6 @@ fun FirstScreen(navController: NavController) {
                 Text(text ="Go to Pizza Screen")
             }
 
-            Button(onClick = { navController.navigate("gpa_screen") }) {
-                Text(text ="Go to GPA Screen")
-            }
         }
     }
 }
@@ -126,10 +123,6 @@ fun SecondScreen(navController: NavController) {
 
 }
 
-@Composable
-fun pizzaPartyScreen(navController: NavController) {
-
-}
 
 @Composable
 fun SpalshScreen(navController: NavController){

@@ -35,7 +35,7 @@ import kotlin.math.ceil
 
 // ToDo 9: make this composable navigatable and then add a button to navigate to the GPA calculator
 @Composable
-fun PizzaPartyScreen( modifier: Modifier = Modifier) {
+fun PizzaPartyScreen(navController: NavController ,modifier: Modifier = Modifier) {
     var totalPizzas by remember { mutableIntStateOf(0) }
     var numPeopleInput by remember { mutableStateOf("") }
     var hungerLevel by remember { mutableStateOf("Medium") }
@@ -52,7 +52,9 @@ fun PizzaPartyScreen( modifier: Modifier = Modifier) {
             labelText = "Number of people?",
             textInput = numPeopleInput,
             onValueChange = { numPeopleInput = it },
-            modifier = modifier.padding(bottom = 16.dp).fillMaxWidth()
+            modifier = modifier
+                .padding(bottom = 16.dp)
+                .fillMaxWidth()
         )
         RadioGroup(
             labelText = "How hungry?",
@@ -74,6 +76,10 @@ fun PizzaPartyScreen( modifier: Modifier = Modifier) {
             modifier = modifier.fillMaxWidth()
         ) {
             Text("Calculate")
+        }
+
+        Button(onClick = { navController.navigate("gpa_screen") }, modifier = modifier.fillMaxWidth()) {
+            Text(text ="Go to GPA Screen")
         }
 
     }

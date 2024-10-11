@@ -34,18 +34,22 @@ fun gpaappFun(navController: NavController) {
             value = grade1,
             onValueChange = { grade1 = it },
             label = { Text("Course 1 Grade") },
+            modifier = Modifier.fillMaxWidth()
         )
         TextField(
             value = grade2,
             onValueChange = { grade2 = it },
             label = { Text("Course 2 Grade") },
+            modifier = Modifier.fillMaxWidth()
         )
         TextField(
             value = grade3,
             onValueChange = { grade3 = it },
             label = { Text("Course 3 Grade") },
+            modifier = Modifier.fillMaxWidth()
         )
 
+        Text(text = gpa)
 
         Button(onClick = {
             if (btnLabel == "Compute GPA") {
@@ -71,16 +75,17 @@ fun gpaappFun(navController: NavController) {
                 grade3 = ""
                 gpa = ""
                 backColor = Color.White
-                btnLabel = "Compute GPA"
             }
-        }) {
+        }, modifier = Modifier.fillMaxWidth()) {
             Text(btnLabel)
         }
 
 
-        if (gpa.isNotEmpty()) {
-            Text(text = "GPA: $gpa")
+
+        Button(onClick = { navController.navigate("first_screen") }, modifier = Modifier.fillMaxWidth()) {
+            Text(text ="Go to First Screen")
         }
+
 
 
     }

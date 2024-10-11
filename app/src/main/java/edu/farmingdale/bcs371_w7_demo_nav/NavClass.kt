@@ -89,6 +89,10 @@ fun FirstScreen(navController: NavController) {
                 Text(text ="Go to Pizza Screen")
             }
 
+            Button(onClick = { navController.navigate("gpa_screen") }) {
+                Text(text ="Go to GPA Screen")
+            }
+
         }
     }
 }
